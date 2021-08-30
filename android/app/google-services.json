@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1009005096350",
+    "project_id": "gold-locker",
+    "storage_bucket": "gold-locker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009005096350:android:1ecc312c5dcd7202f77a8f",
+        "android_client_info": {
+          "package_name": "com.example.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1009005096350-5re7eetn2bvdhggqjsfsuhsd6ehbq4dr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDev7-OsXJKi7utvATqvB3CIlfM7ewT5yo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1009005096350-5re7eetn2bvdhggqjsfsuhsd6ehbq4dr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
