@@ -1,6 +1,10 @@
+import 'dart:js';
+
 import 'package:firebase_auth/firebase_auth.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class AuthenticationService {
   final FirebaseAuth _firebaseAuth;
@@ -27,12 +31,9 @@ class AuthenticationService {
       await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
       return "Signed in";
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        var errmessage = 'No user found for that email.';
-      } else if (e.code == 'wrong-password') {
-        var errmessage = 'Wrong password provided for that user.';
-      }
+    } on FirebaseAuthException catch (error) {
+      var emessage = error.message;
+      Fluttertoast.showToast(msg: '$emessage', gravity: ToastGravity.TOP);
     }
   }
 
