@@ -18,8 +18,7 @@ class home extends StatelessWidget {
                 color: Colors.grey[900]),
             height: size.height * .1,
             width: size.width * .95,
-            child:  Center(
-                
+            child: Center(
                 child: Text(
               "To start useing go into settings and setup a New Contract",
               style: kBodyText.copyWith(fontSize: 14),
