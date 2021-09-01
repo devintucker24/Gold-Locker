@@ -1,10 +1,9 @@
-import 'dart:js';
-
 import 'package:firebase_auth/firebase_auth.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:myapp/pallet.dart';
 
 class AuthenticationService {
   final FirebaseAuth _firebaseAuth;
@@ -31,9 +30,13 @@ class AuthenticationService {
       await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
       return "Signed in";
-    } on FirebaseAuthException catch (error) {
-      var emessage = error.message;
-      Fluttertoast.showToast(msg: '$emessage', gravity: ToastGravity.TOP);
+    } on FirebaseAuthException catch (e) {
+      Fluttertoast.showToast(
+          msg: 'User or not found under that email, or password is incorrect.',
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.TOP,
+          backgroundColor: Gold.kGold.withOpacity(.8),
+          textColor: Eden.kEden.shade800);
     }
   }
 
