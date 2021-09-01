@@ -10,6 +10,7 @@ import 'package:myapp/screens/login/local_widgets/create_account_button.dart';
 import 'package:myapp/screens/login/local_widgets/email_input.dart';
 import 'package:myapp/screens/login/local_widgets/password_input.dart';
 import '../../authentication_service.dart';
+import 'package:myapp/authentication_service.dart';
 
 class CreateAccount extends StatefulWidget {
   @override
@@ -108,6 +109,9 @@ class _CreateAccountState extends State<CreateAccount> {
                       if (_formKey.currentState!.validate()) {
                         dynamic result =
                             await _firebaseAuth.signUp(email, password);
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                            '/', (Route<dynamic> route) => false);
+                        _firebaseAuth.signOut();
                         if (result == null) {
                           setState(() {
                             error = 'Please supply a valid email';
