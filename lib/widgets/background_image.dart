@@ -21,7 +21,8 @@ class BackgroundImage extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(image),
-            colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
+            colorFilter:
+                const ColorFilter.mode(Colors.black45, BlendMode.darken),
             fit: BoxFit.cover,
           ),
         ),
