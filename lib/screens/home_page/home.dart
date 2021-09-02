@@ -186,9 +186,9 @@ class _homeState extends State<home> {
                           ),
                           child: Container(
                               color: Gold.kGold.shade300,
-                              height: size.height * .045,
+                              height: size.height * .04,
                               width: size.width * .18,
-                              child: Text(' ')))
+                              child: Text('Hello')))
                     ],
                   ),
                 ],
