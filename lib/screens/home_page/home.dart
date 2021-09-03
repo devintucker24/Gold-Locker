@@ -1,13 +1,10 @@
 import 'dart:ui';
-
-import 'package:date_time_picker/date_time_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/screens/home_page/Local_widgets/dropdown.dart';
-import 'package:provider/provider.dart';
+import 'package:myapp/screens/home_page/Local_widgets/date_picker.dart';
 import 'package:intl/intl.dart';
-import '../../authentication_service.dart';
 import '../../pallet.dart';
-import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+import 'package:myapp/screens/home_page/Local_widgets/button_widget.dart';
+import 'package:intl/intl.dart';
 
 class home extends StatefulWidget {
   @override
@@ -23,6 +20,10 @@ class _homeState extends State<home> {
 
   @override
   Widget build(BuildContext context) {
+    DateTime singOn = DateTime(
+        int.parse(DateFormat('yyyy, DD, MM').format(DateRangePickerWidget())));
+//need to fixer this^^^ why wont it reade dateRange.start????
+
     Size size = MediaQuery.of(context).size;
     return Column(children: [
       const SizedBox(height: 20),
@@ -44,7 +45,8 @@ class _homeState extends State<home> {
                 height: size.height * .04,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                decoration: BoxDecoration(color: Gold.kGold.shade400),
+                decoration:
+                    BoxDecoration(color: Gold.kGold.shade400.withOpacity(0.8)),
                 child: DropdownButton(
                   value: dropdownvalue,
                   dropdownColor: Gold.kGold.shade400,
@@ -108,93 +110,51 @@ class _homeState extends State<home> {
                     endIndent: 20,
                     color: Gold.kGold,
                   ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
-                      child: Text(
-                        'Sign-On Date:',
-                        textAlign: TextAlign.left,
-                        style: kBodyText,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-                    child: DateTimePicker(
-                      style: kBodyText,
-                      decoration: InputDecoration(
-                        fillColor: Colors.white,
-                      ),
-                      type: DateTimePickerType.date,
-                      dateMask: 'dd MMM, yyyy',
-                      initialValue: DateTime.now().toString(),
-                      firstDate: DateTime(2000),
-                      lastDate: DateTime(2100),
-                      onChanged: (val) => print(val),
-                      validator: (val) {
-                        print(val);
-                        return null;
-                      },
-                      onSaved: (val) => print(val),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(15, 15, 0, 0),
-                      child: Text(
-                        'Sign-Off Date:',
-                        textAlign: TextAlign.left,
-                        style: kBodyText,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                      padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-                      child: DateTimePicker(
-                        style: kBodyText,
-                        decoration: InputDecoration(
-                          fillColor: Colors.white,
-                        ),
-                        type: DateTimePickerType.date,
-                        dateMask: 'dd MMM, yyyy',
-                        initialValue: DateTime.now().toString(),
-                        firstDate: DateTime(2000),
-                        lastDate: DateTime(2100),
-                        onChanged: (val) => print(val),
-                        validator: (val) {
-                          print(val);
-                          return null;
-                        },
-                        onSaved: (val) => print(val),
-                      )),
+                  DateRangePickerWidget(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(15, 10, 15, 0),
+                        padding: const EdgeInsets.fromLTRB(15, 20, 0, 0),
                         child: Text('Days: ',
                             style: kBodyText.copyWith(fontSize: 24)),
                       ),
                       Padding(
-                          padding: const EdgeInsets.fromLTRB(
-                            0,
-                            15,
-                            18,
-                            10,
+                        padding: const EdgeInsets.fromLTRB(
+                          0,
+                          5,
+                          0,
+                          0,
+                        ),
+                        child: Container(
+                          color: Gold.kGold.shade400.withOpacity(0.8),
+                          height: size.height * .045,
+                          width: size.width * .18,
+                          child: Center(
+                            child: Text(
+                              'Hello',
+                              style: kBodyText.copyWith(
+                                  color: Eden.kEden, fontSize: 20),
+                            ),
                           ),
-                          child: Container(
-                              color: Gold.kGold.shade300,
-                              height: size.height * .04,
-                              width: size.width * .18,
-                              child: Text('Hello')))
+                        ),
+                      )
                     ],
                   ),
                 ],
               ))
         ]),
-      )
+      ),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(15, 15, 15, 15),
+        child: Container(
+          decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              color: Colors.grey[900]),
+          height: size.height * .3,
+          width: size.width * 1,
+        ),
+      ),
     ]);
   }
 }
