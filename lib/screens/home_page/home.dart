@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:myapp/screens/home_page/Local_widgets/date_picker.dart';
 import 'package:intl/intl.dart';
 import '../../pallet.dart';
-import 'package:myapp/screens/home_page/Local_widgets/button_widget.dart';
-import 'package:intl/intl.dart';
 
 class home extends StatefulWidget {
   @override
@@ -20,8 +18,6 @@ class _homeState extends State<home> {
 
   @override
   Widget build(BuildContext context) {
-    DateTime singOn = DateTime(
-        int.parse(DateFormat('yyyy, DD, MM').format(DateRangePickerWidget())));
 //need to fixer this^^^ why wont it reade dateRange.start????
 
     Size size = MediaQuery.of(context).size;
@@ -63,8 +59,14 @@ class _homeState extends State<home> {
               ),
             ],
           )),
+      //
+      //
+      //
       const SizedBox(height: 15),
       Padding(
+        //
+        //
+        //
         padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
@@ -88,9 +90,15 @@ class _homeState extends State<home> {
                   )
                 ],
               )),
+          //
+          //
+          //
           const SizedBox(
             width: 15,
           ),
+          //
+          //
+          //
           Container(
               decoration: BoxDecoration(
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
@@ -110,48 +118,21 @@ class _homeState extends State<home> {
                     endIndent: 20,
                     color: Gold.kGold,
                   ),
-                  DateRangePickerWidget(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(15, 20, 0, 0),
-                        child: Text('Days: ',
-                            style: kBodyText.copyWith(fontSize: 24)),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(
-                          0,
-                          5,
-                          0,
-                          0,
-                        ),
-                        child: Container(
-                          color: Gold.kGold.shade400.withOpacity(0.8),
-                          height: size.height * .045,
-                          width: size.width * .18,
-                          child: Center(
-                            child: Text(
-                              'Hello',
-                              style: kBodyText.copyWith(
-                                  color: Eden.kEden, fontSize: 20),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
+                  DateRangePickerWidget(), // Day Calculator; useing files date_picker & button_widget
                 ],
               ))
         ]),
       ),
+      //
+      //
+      //
       Padding(
         padding: const EdgeInsets.fromLTRB(15, 15, 15, 15),
         child: Container(
           decoration: BoxDecoration(
               borderRadius: const BorderRadius.all(Radius.circular(10)),
               color: Colors.grey[900]),
-          height: size.height * .3,
+          height: size.height * .34,
           width: size.width * 1,
         ),
       ),
