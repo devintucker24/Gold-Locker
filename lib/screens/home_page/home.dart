@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:myapp/screens/home_page/Local_widgets/contract_dropdown.dart';
 import 'package:myapp/screens/home_page/Local_widgets/date_picker.dart';
 import 'package:intl/intl.dart';
 import '../../pallet.dart';
@@ -11,10 +12,6 @@ class home extends StatefulWidget {
 
 class _homeState extends State<home> {
   String dropdownvalue = 'Taino';
-
-  final format = DateFormat('mm-dd-yyyy');
-
-  var items = ['Taino', 'El Coquie', 'Bay State', 'Isla Bella'];
 
   @override
   Widget build(BuildContext context) {
@@ -32,31 +29,15 @@ class _homeState extends State<home> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Current Contract/Vessel: ",
-                style: kBodyText.copyWith(fontSize: 16),
-                textAlign: TextAlign.center,
-              ),
-              Container(
-                height: size.height * .04,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                decoration:
-                    BoxDecoration(color: Gold.kGold.shade400.withOpacity(0.8)),
-                child: DropdownButton(
-                  value: dropdownvalue,
-                  dropdownColor: Gold.kGold.shade400,
-                  items: items.map<DropdownMenuItem<String>>((String items) {
-                    return DropdownMenuItem<String>(
-                        value: items, child: Text(items));
-                  }).toList(),
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      dropdownvalue = newValue!;
-                    });
-                  },
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                child: Text(
+                  "Current Contract/Vessel: ",
+                  style: kBodyText.copyWith(fontSize: 16),
+                  textAlign: TextAlign.center,
                 ),
               ),
+              contract_dropdown()
             ],
           )),
       //

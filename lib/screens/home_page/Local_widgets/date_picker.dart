@@ -73,13 +73,19 @@ class _DateRangePickerWidgetState extends State<DateRangePickerWidget> {
                 0,
               ),
               child: Container(
-                color: Gold.kGold.shade400.withOpacity(0.8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                  color: Gold.kGold.shade400.withOpacity(0.8),
+                ),
                 height: 50,
                 width: 60,
                 child: Center(
                   child: Text(
                     days(),
-                    style: kBodyText.copyWith(color: Eden.kEden, fontSize: 20),
+                    style: kBodyText.copyWith(
+                        color: Eden.kEden,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -103,6 +109,5 @@ class _DateRangePickerWidgetState extends State<DateRangePickerWidget> {
     if (newDateRange == null) return;
 
     setState(() => dateRange = newDateRange);
-    print(dateRange);
   }
 }
