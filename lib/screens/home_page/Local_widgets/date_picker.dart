@@ -60,37 +60,40 @@ class _DateRangePickerWidgetState extends State<DateRangePickerWidget> {
               onClicked: () => pickDateRange(context),
             ),
           ),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-              child: Text('Days: ', style: kBodyText.copyWith(fontSize: 24)),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(
-                0,
-                22,
-                0,
-                0,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                child: Text('Days: ', style: kBodyText.copyWith(fontSize: 24)),
               ),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
-                  color: Gold.kGold.shade400.withOpacity(0.8),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  0,
+                  22,
+                  0,
+                  0,
                 ),
-                height: 50,
-                width: 60,
-                child: Center(
-                  child: Text(
-                    days(),
-                    style: kBodyText.copyWith(
-                        color: Eden.kEden,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                    color: Gold.kGold.shade400.withOpacity(0.8),
+                  ),
+                  height: 50,
+                  width: 60,
+                  child: Center(
+                    child: Text(
+                      days(),
+                      style: kBodyText.copyWith(
+                          color: Eden.kEden,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
-            )
-          ])
+            ],
+          )
         ],
       );
 

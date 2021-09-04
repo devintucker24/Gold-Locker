@@ -1,13 +1,14 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class new_contract extends StatefulWidget {
-  const new_contract({Key? key}) : super(key: key);
+class NeContract extends StatefulWidget {
+  const NeContract({Key? key}) : super(key: key);
 
   @override
-  _new_contractState createState() => _new_contractState();
+  _NeContractState createState() => _NeContractState();
 }
 
-class _new_contractState extends State<new_contract> {
+class _NeContractState extends State<NeContract> {
   @override
   Widget build(BuildContext context) {
     return Container();

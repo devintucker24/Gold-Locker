@@ -67,33 +67,35 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                      padding: EdgeInsets.fromLTRB(15, 5, 15, 0),
-                      child: Container(
-                          height: size.height * 0.06,
-                          width: size.width * 0.8,
-                          decoration: BoxDecoration(
-                            color: Colors.grey[500]?.withOpacity(0.6),
+                    padding: EdgeInsets.fromLTRB(15, 5, 15, 0),
+                    child: Container(
+                      height: size.height * 0.06,
+                      width: size.width * 0.8,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[500]?.withOpacity(0.6),
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: TextField(
+                            style: kBodyText,
+                            controller: passwordController,
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                suffixIcon: Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 0, 25, 0),
+                                  child: Icon(FontAwesomeIcons.lock,
+                                      size: 30, color: Clay.kClay),
+                                ),
+                                hintText: 'Password',
+                                hintStyle: kBodyText),
+                            obscureText: true,
+                            textInputAction: TextInputAction.next,
                           ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                              child: TextField(
-                                style: kBodyText,
-                                controller: passwordController,
-                                decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    suffixIcon: Padding(
-                                      padding: EdgeInsets.fromLTRB(0, 0, 25, 0),
-                                      child: Icon(FontAwesomeIcons.lock,
-                                          size: 30, color: Clay.kClay),
-                                    ),
-                                    hintText: 'Password',
-                                    hintStyle: kBodyText),
-                                obscureText: true,
-                                textInputAction: TextInputAction.next,
-                              ),
-                            ),
-                          ))),
+                        ),
+                      ),
+                    ),
+                  ),
                   const SizedBox(height: 10),
                   Row(
                     children: [

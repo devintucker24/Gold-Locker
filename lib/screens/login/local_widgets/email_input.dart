@@ -33,29 +33,29 @@ class EmailInput extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
       child: Container(
-          height: size.height * 0.06,
-          width: size.width * 0.8,
-          decoration: BoxDecoration(
-            color: Colors.grey[500]?.withOpacity(0.6),
+        height: size.height * 0.06,
+        width: size.width * 0.8,
+        decoration: BoxDecoration(
+          color: Colors.grey[500]?.withOpacity(0.6),
+        ),
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+            child: TextField(
+              controller: emailController,
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  suffixIcon: Padding(
+                    padding: EdgeInsets.fromLTRB(0, 0, 25, 0),
+                    child: Icon(icon, size: 30, color: Eden.kEden),
+                  ),
+                  hintText: hint,
+                  hintStyle: kBodyText),
+              keyboardType: inputType,
+              textInputAction: inputAction,
+            ),
           ),
-          child: Center(
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: TextField(
-                  controller: emailController,
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      suffixIcon: Padding(
-                        padding: EdgeInsets.fromLTRB(0, 0, 25, 0),
-                        child: Icon(icon, size: 30, color: Eden.kEden),
-                      ),
-                      hintText: hint,
-                      hintStyle: kBodyText),
-                  keyboardType: inputType,
-                  textInputAction: inputAction,
-                ),
-              )
-          )
+        ),
       ),
     );
   }

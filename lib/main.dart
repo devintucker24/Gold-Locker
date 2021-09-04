@@ -25,32 +25,34 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-        providers: [
-          Provider<AuthenticationService>(
-            create: (_) => AuthenticationService(FirebaseAuth.instance),
-          ),
-          StreamProvider(
-            create: (context) =>
-                context.read<AuthenticationService>().authStateChanges,
-            initialData: null,
-          )
-        ],
-        child: MaterialApp(
-          title: 'Gold Locker',
-          theme: ThemeData(
-              textTheme: GoogleFonts.loraTextTheme(),
-              primarySwatch: Clay.kClay,
-              visualDensity: VisualDensity.adaptivePlatformDensity),
-          initialRoute: '/',
-          routes: {
-            '/': (context) => AuthenticationWrapper(),
-            'ForgotPassword': (context) => ForgotPassword(),
-            'CreateAccount': (context) => CreateAccount(),
-          },
-        ));
+      providers: [
+        Provider<AuthenticationService>(
+          create: (_) => AuthenticationService(FirebaseAuth.instance),
+        ),
+        StreamProvider(
+          create: (context) =>
+              context.read<AuthenticationService>().authStateChanges,
+          initialData: null,
+        )
+      ],
+      child: MaterialApp(
+        title: 'Gold Locker',
+        theme: ThemeData(
+            textTheme: GoogleFonts.loraTextTheme(),
+            primarySwatch: Clay.kClay,
+            visualDensity: VisualDensity.adaptivePlatformDensity),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => AuthenticationWrapper(),
+          'ForgotPassword': (context) => ForgotPassword(),
+          'CreateAccount': (context) => CreateAccount(),
+        },
+      ),
+    );
   }
 }
 
+// ignore: use_key_in_widget_constructors
 class AuthenticationWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

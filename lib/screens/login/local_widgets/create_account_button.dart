@@ -4,7 +4,6 @@ import '../../../pallet.dart';
 class CreateAccountButton extends StatelessWidget {
   CreateAccountButton({
     Key? key,
-
     required this.buttonName,
   }) : super(key: key);
 
@@ -17,7 +16,7 @@ class CreateAccountButton extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(0, 0, 26, 0),
       child: Container(
         height: size.height * 0.05,
-        width: size.width *0.38,
+        width: size.width * 0.38,
         decoration: BoxDecoration(
           color: Clay.kClay,
         ),
@@ -25,8 +24,7 @@ class CreateAccountButton extends StatelessWidget {
           onPressed: () {
             Navigator.pushNamed(context, 'CreateAccount');
           },
-          child: Text(buttonName, style: kBodyText.copyWith(fontSize: 16)
-          ),
+          child: Text(buttonName, style: kBodyText.copyWith(fontSize: 16)),
         ),
       ),
     );
