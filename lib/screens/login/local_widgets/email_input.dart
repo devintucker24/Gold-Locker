@@ -2,15 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/pallet.dart';
-import 'package:myapp/screens/forgot_pass/forgot_password.dart';
-import 'package:provider/provider.dart';
-import 'package:myapp/authentication_service.dart';
-import 'package:myapp/screens/login/login_screen.dart';
-import 'package:myapp/screens/screen.dart';
-import 'package:myapp/screens/create_account/create_account.dart';
-import 'package:myapp/screens/home_page/home_page.dart';
 
 class EmailInput extends StatelessWidget {
   EmailInput({

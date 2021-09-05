@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:myapp/screens/home_page/home.dart';
+import 'package:myapp/screens/home_page/home/home.dart';
 import 'package:provider/provider.dart';
 
 import '../../authentication_service.dart';
@@ -49,19 +49,20 @@ class _HomePage extends State<HomePage> {
         titleTextStyle: kHeadings.copyWith(fontWeight: FontWeight.bold),
         backgroundColor: Colors.grey.shade900.withOpacity(.7),
         actions: [
-        Padding(
+          Padding(
               padding: EdgeInsets.only(right: 20.0),
               child: GestureDetector(
-                onTap: () {context.read<AuthenticationService>().signOut();},
+                onTap: () {
+                  context.read<AuthenticationService>().signOut();
+                },
                 child: Icon(
                   FontAwesomeIcons.signOutAlt,
-                  size: 26.0, color: Gold.kGold,
+                  size: 26.0,
+                  color: Gold.kGold,
                 ),
-              )
-    ),
+              )),
         ],
-        ),
-    
+      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -76,7 +77,6 @@ class _HomePage extends State<HomePage> {
             icon: Icon(Icons.calendar_today_sharp),
             label: 'Business',
             backgroundColor: Colors.grey.shade900,
-            
           ),
           BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.searchDollar),
